@@ -3,11 +3,67 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="style.css" />
 		<title>WKP7</title>
 	</head>
 	<body>
+		<header>
+		<h1></h1>
+		</header>
+		<main>
+			<header>
+				<h1>Library</h1>
+			</header>
+			<section class="form">
+				<header>
+					<h2>Add a book</h2>
+				</header>
+				<form>
+					<div>
+						<label for="title">Book title</label>
+						<input type="text" name="title" id="title" placeholder="Title">
+					</div>
+					<div>
+						<label for="author">Book author</label>
+						<input type="text" name="author" id="author" placeholder="Author">
+					</div>
+					<div>
+						<label for="genre">Book genre</label>
+						<select name="genre" id="genre" placeholder="Genre">
+							<option value="mystery">Mystery</option>
+							<option value="thriller">Thriller</option>
+							<option value="fiction">Fiction</option>
+							<option value="non-fiction">Non-fiction</option>
+							<option value="fantasy">Fantasy</option>
+							<option value="design">Design</option>
+							<option value="memoirs">Memoirs</option>
+						</select>
+					</div>
+					<div>
+						<label for="pages">Book pages</label>
+						<input type="number" name="pages" id="pages" placeholder="Number of pages">
+					</div>
+					<div>
+						<label for="status">Status</label>
+						<select name="status" id="status">
+							<option value="read">Read</option>
+							<option value="not-read">Not</option>
+						</select>
+					</div>
+					<button class="add" type="submit">Add</button>
+				</form>
+			</section>
+			<section class="book-list">
+				<ul class="thead">
+					<li>title</li>
+					<li>author</li>
+					<li>genre</li>
+					<li>pages</li>
+					<li>read</li>
+					<li></li>
+				</ul>
+			</section>
+		</main>
 		<script src="script.js"></script>
 	</body>
 </html>
