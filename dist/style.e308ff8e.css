@@ -32,7 +32,7 @@ body {
 body > header {
     height: 100px;
     background-color:  #0083C3;
-    background-image: url(./image/onja_logo_transparent.svg);
+    background-image: url(/onja_logo_transparent.936e59ba.svg);
     background-repeat: no-repeat;
     background-position: 2% 50%;
 }
@@ -70,8 +70,10 @@ ul {
 }
 
 .delete {
-    background-image: url(./image/delete2.svg);
+    background-image: url(/delete2.29a648a2.svg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 1rem;
 }
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
