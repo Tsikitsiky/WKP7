@@ -27,7 +27,6 @@ const books = [
     },
 ]
 
-let newLibrary = [...books];
 const bookList = document.querySelector('.book-list');
 const form = document.querySelector('form');
 const title = document.getElementById('title');
@@ -37,9 +36,27 @@ const pages = document.getElementById('pages');
 const status = document.getElementById('status');
 const add = form.querySelector('.add');
 
+
+// display the book
+const displayBook = () => {
+    const html = books.map(book => {
+        return `<ul class="tr" data-id="${book.id}">
+                    <li>${book.title}</li>
+                    <li>${book.author}</li>
+                    <li>${book.genre}</li>
+                    <li>${book.pages}</li>
+                    <li><input type="checkbox"></li>
+                    <li><button class="delete"></button></li>
+                </ul>`;
+    }).join('');
+
+    bookList.innerHTML = html;
+}
+
 //handle add book
 const handleAddBtn = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
+    let newLibrary = []; // new array to store the new book
     const newBook = {
         title: `${title.value}`,
         author: `${author.value}`,
@@ -50,12 +67,8 @@ const handleAddBtn = (e) => {
     };
 
     newLibrary.push(newBook);
-    console.log(newLibrary);
-    console.log("new book added");
-}
+    books.push(newBook);
 
-// display the book
-const displayBook = () => {
     const html = newLibrary.map(book => {
         return `<ul class="tr" data-id="${book.id}">
                     <li>${book.title}</li>
@@ -67,8 +80,11 @@ const displayBook = () => {
                 </ul>`;
     }).join('');
 
-bookList.innerHTML += html;
+    bookList.insertAdjacentHTML("beforeend", html);
+    console.log(books);
+    console.log("new book added");
 }
+
 
 // event listener
 add.addEventListener('click', handleAddBtn);
